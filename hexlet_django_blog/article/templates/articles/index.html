@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-{%  for item in data %}
-<h1>{{ item.title }}</h1>
-    <p>{{ item.author }}</p>
-{% endfor %}
+    <h1>Список статей</h1>
+    {% for article in articles %}
+        <h1><a href="{% url 'article_detail' article.id %}">
+          {{ article.name }}
+      </a>
+      </h1>
+        <div>{{ article.body|slice:":200" }}</div>
+    {% endfor %}
 {% endblock %}

@@ -1,1 +1,8 @@
-<h1>Hello, {{ who }}!</h1>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello, Valek!</h1>
+    <h1>О блоге</h1>
+    <p>Эксперименты с Django на Хекслете</p>
+    <p>{{ tags|join:', ' }}</p>
+{% endblock %}
